@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/signup_email_container"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingVertical="30dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Signup with email"
+        android:id="@+id/title_signup_email"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@+id/signup_email_container"
+        app:layout_constraintRight_toRightOf="@+id/signup_email_container"
+        app:layout_constraintLeft_toLeftOf="@+id/signup_email_container"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_with_google"
+        app:layout_constraintTop_toBottomOf="@+id/title_signup_email"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:padding="5dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_edittext">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/google_icon"
+            android:src="@drawable/mail_icon"
+            android:contentDescription="Google Icon"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
+            android:tint="@color/gray"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/email_waiting"
+            android:hint="Email Id"
+            android:background="@null"
+            android:layout_margin="10dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_with_facebook"
+        app:layout_constraintTop_toBottomOf="@+id/signup_with_google"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:padding="5dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_edittext">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/facebook_icon"
+            android:src="@drawable/lock_icon"
+            android:contentDescription="Google Icon"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
+            android:tint="@color/gray"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/password_waiting"
+            android:hint="Password"
+            android:background="@null"
+            android:layout_margin="10dp"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirm_pw_container"
+        app:layout_constraintTop_toBottomOf="@+id/signup_with_facebook"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:padding="5dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_edittext">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/lock_icon"
+            android:src="@drawable/lock_icon"
+            android:contentDescription="Google Icon"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
+            android:tint="@color/gray"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/confirm_pw_edt"
+            android:hint="Confirm Password"
+            android:background="@null"
+            android:layout_margin="10dp"/>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_signup_email"
+        android:background="@drawable/bg_btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_pw_container"
+        android:clickable="true"
+        android:text="Signup"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:textAllCaps="false"
+        android:textSize="22dp"
+        android:textAlignment="center"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

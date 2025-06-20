@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/nav_categories">
+        <item
+            android:id="@+id/nav_fashion"
+            android:icon="@drawable/cloth"
+            android:title="Fashion"/>
+        <item
+            android:id="@+id/nav_electronics"
+            android:icon="@drawable/electronics"
+            android:title="Electronics"/>
+        <item
+            android:id="@+id/nav_appliances"
+            android:title="Appliances"
+            android:icon="@drawable/appliances" />
+        <item
+            android:id="@+id/nav_beauty"
+            android:title="Beauty"
+            android:icon="@drawable/lipstick" />
+        <item
+            android:id="@+id/nav_furniture"
+            android:title="Furniture"
+            android:icon="@drawable/furniture" />
+    </group>
+
+</menu>

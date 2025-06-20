@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/nav_bar">
+        <item
+            android:id="@+id/nav_shop_by_categories"
+            android:title="Shop by Categories"
+            android:icon="@drawable/category_24px"/>
+        <item
+            android:id="@+id/nav_my_orders"
+            android:title="My Orders"
+            android:icon="@drawable/list_alt_24px"/>
+        <item
+            android:id="@+id/nav_favourites"
+            android:title="Favourites"
+            android:icon="@drawable/favorite_24px"/>
+        <item
+            android:id="@+id/nav_faqs"
+            android:title="FAQs"
+            android:icon="@drawable/contact_support_24px"/>
+        <item
+            android:id="@+id/nav_address"
+            android:title="Address"
+            android:icon="@drawable/location_on_24px"/>
+        <item
+            android:id="@+id/nav_saved_cards"
+            android:title="Saved Cards"
+            android:icon="@drawable/credit_card_24px"/>
+        <item
+            android:id="@+id/nav_terms_and_conditions"
+            android:title="@string/terms_conditions"
+            android:icon="@drawable/contract_24px"/>
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:title="Privacy Policy"
+            android:icon="@drawable/verified_user_24px"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout"
+            android:icon="@drawable/chip_extraction_24px"/>
+
+    </group>
+</menu>
