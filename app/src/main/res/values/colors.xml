@@ -22,4 +22,6 @@
     <color name="lavender">#22c7b4</color>
     <color name="redprimary">#EF4444</color>
     <color name="lightlightgray">#F8F7F7</color>
+    <color name="brown">#EA580C</color>
+    <color name="darkyellow">#F59E0B</color>
 </resources>
