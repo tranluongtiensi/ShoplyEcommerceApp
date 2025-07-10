@@ -1,4 +1,4 @@
-package com.example.shoplyecommerceapp
+package com.example.shoplyecommerceapp.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.shoplyecommerceapp.data.CategoryDataModel
+import com.example.shoplyecommerceapp.R
 
 class CategoryAdapter(private val categories: List<CategoryDataModel>):
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {

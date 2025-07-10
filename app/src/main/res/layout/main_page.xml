@@ -54,8 +54,8 @@
             app:menu="@menu/bottom_menu"
             android:background="@color/white"
             android:layout_alignParentBottom="true"
-            app:itemIconTint="@drawable/item_selector"
-            app:itemTextColor="@drawable/item_selector"
+            app:itemIconTint="@color/item_selector"
+            app:itemTextColor="@color/item_selector"
             android:elevation="4dp" />
 
 
@@ -65,7 +65,7 @@
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
+        app:headerLayout="@layout/nav_header_nologin"
         app:menu="@menu/nav_menu"
         app:itemBackground="@drawable/item_selector_bg"
         android:fitsSystemWindows="true"/>

@@ -1,4 +1,4 @@
-package com.example.shoplyecommerceapp
+package com.example.shoplyecommerceapp.fragments
 
 import android.os.Bundle
 import android.os.Handler
@@ -7,12 +7,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.shoplyecommerceapp.data.CategoryDataModel
+import com.example.shoplyecommerceapp.R
+import com.example.shoplyecommerceapp.adapters.BannerAdapter
+import com.example.shoplyecommerceapp.adapters.CategoryAdapter
+import com.example.shoplyecommerceapp.adapters.FootwearAdapter
+import com.example.shoplyecommerceapp.data.Footwear
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 
 class HomeFragment : Fragment() {
@@ -37,6 +44,12 @@ class HomeFragment : Fragment() {
         R.drawable.banner4
     )
 
+    val footwear = listOf(
+        Footwear(R.drawable.footwear1,false, "adidas", "20","4.3", "300"),
+        Footwear(R.drawable.footwear2,false, "nike", "20","4.3", "300"),
+        Footwear(R.drawable.footwear3,false, "adidas", "20","4.3", "300")
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,10 +61,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Tại đây mới truy cập được View để setup RecyclerView
+        // recyclerview for category
         val recyclerView = view.findViewById<RecyclerView>(R.id.recv_categories)
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 5)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = CategoryAdapter(categories)
+
+        // recyclerview for banner and set up dot indicator
         viewPager2 = view.findViewById(R.id.banner_vp2)
         tabLayout = view.findViewById<TabLayout>(R.id.dotIndicator_tabL)
         val adapter = BannerAdapter(images)
@@ -69,6 +84,11 @@ class HomeFragment : Fragment() {
                 handler.postDelayed(this, slideDelay)
             }
         }
+
+        // recyclerview for footwear hot sealer
+        val recycleviewFootwear : RecyclerView = view.findViewById(R.id.review_hot_product_rcv)
+        recycleviewFootwear.layoutManager = LinearLayoutManager( requireContext(),LinearLayoutManager.HORIZONTAL, false)
+        recycleviewFootwear.adapter = FootwearAdapter(footwear)
     }
 
     override fun onResume() {

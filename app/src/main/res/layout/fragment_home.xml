@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment"
+    tools:context=".fragments.HomeFragment"
     android:background="@color/white">
 
     <androidx.appcompat.widget.SearchView
@@ -38,7 +38,8 @@
                 android:id="@+id/categories_container"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingHorizontal="15dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -47,8 +48,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_margin="15dp"/>
+                    app:layout_constraintStart_toStartOf="parent" />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -56,7 +56,6 @@
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_margin="15dp"
                     android:clickable="true">
                     <TextView
                         android:layout_width="wrap_content"
@@ -75,27 +74,31 @@
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recv_categories"
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="15dp"
-                android:layout_marginTop="16dp"
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:scrollbars="horizontal"
+                android:layout_height="wrap_content"
+                android:id="@+id/categories_gridlayout"
+                android:rowCount="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/categories_container"
-                tools:listitem="@layout/categories_item" />
+                android:paddingHorizontal="15dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recv_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/categories_item" />
+            </GridLayout>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:id="@+id/banner_vp2"
                 android:layout_marginVertical="20dp"
-                app:layout_constraintTop_toBottomOf="@+id/recv_categories"
+                app:layout_constraintTop_toBottomOf="@+id/categories_gridlayout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:orientation="horizontal"/>
@@ -471,11 +474,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/hot_footwear_gridlayout"
-                    android:rowCount="1">
+                    android:rowCount="1"
+                    app:layout_constraintTop_toBottomOf="@+id/view_all_hot_footwear"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
                     <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        lis
+                        android:id="@+id/review_hot_product_rcv"
+                        tools:listitem="@layout/hot_footwear_item"
+                        android:clipToPadding="true"/>
+
                 </GridLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

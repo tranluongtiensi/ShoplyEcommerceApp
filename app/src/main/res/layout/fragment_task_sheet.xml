@@ -3,8 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".FragmentTaskSheet"
     android:id="@+id/loginemail_container"
     android:background="@drawable/bg_bottom_sheet"
     android:paddingVertical="30dp">
@@ -41,7 +39,7 @@
             android:layout_gravity="center"
             android:padding="3dp"
             android:layout_marginLeft="10dp"
-            android:tint="@color/gray"/>
+            app:tint="@color/gray"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"

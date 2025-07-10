@@ -1,4 +1,4 @@
-package com.example.shoplyecommerceapp
+package com.example.shoplyecommerceapp.data
 
 data class CategoryDataModel (
         val name: String,

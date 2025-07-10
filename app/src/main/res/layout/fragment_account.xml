@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AccountFragment">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/avatar_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="15dp">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/avatar_imgv"
+            android:src="@drawable/default_avatar" />
+        <ImageButton
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:id="@+id/change_avt_imgbtn"
+            android:src="@drawable/edit_24px"
+            app:tint="@color/favoritecolornocheck"
+            android:scaleType="fitCenter"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/favorite_bg"
+            android:backgroundTint="@color/white"
+            android:padding="3dp"
+            android:elevation="1dp"/>
+
+
+
+    </FrameLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/profile_name_edt"
+        style=""
+        android:textSize="23sp"
+        android:hint="Name"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_edittext"
+        android:layout_margin="15dp"
+        android:padding="20dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/profile_emailid_edt"
+        android:textSize="23sp"
+        android:hint="Email Id"
+        app:layout_constraintTop_toBottomOf="@+id/profile_name_edt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_edittext"
+        android:layout_margin="15dp"
+        android:padding="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/profile_contact_edt"
+        android:textSize="23sp"
+        android:hint="Mobile Number"
+        app:layout_constraintTop_toBottomOf="@+id/profile_emailid_edt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_edittext"
+        android:layout_margin="15dp"
+        android:padding="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/profile_location_edt"
+        android:textSize="23sp"
+        android:hint="Location"
+        app:layout_constraintTop_toBottomOf="@+id/profile_contact_edt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_edittext"
+        android:layout_margin="15dp"
+        android:padding="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gender_tv"
+        android:text="Gender"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/profile_location_edt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="15dp"/>
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gender_checkbox_ratiog"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/gender_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="15dp">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/male_gender_checkbox"
+                android:checked="true"
+                android:text="Male"
+                style="@style/RatioButtonStyles"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/female_gender_checkbox"
+                android:text="Female"
+                style="@style/RatioButtonStyles"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/other_gender_checkbox"
+                style="@style/RatioButtonStyles"
+                android:text="Other"/>
+        </RadioGroup>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        app:layout_constraintTop_toBottomOf="@id/gender_checkbox_ratiog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/ButtonStyles"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="50dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,9 @@
-package com.example.shoplyecommerceapp
+package com.example.shoplyecommerceapp.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +11,23 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import com.example.shoplyecommerceapp.R
+import com.example.shoplyecommerceapp.databinding.LoginMainPageBinding
 import com.example.shoplyecommerceapp.databinding.MainPageBinding
+import com.example.shoplyecommerceapp.fragments.AccountFragment
+import com.example.shoplyecommerceapp.fragments.AddressesFragment
+import com.example.shoplyecommerceapp.fragments.FaqsFragment
+import com.example.shoplyecommerceapp.fragments.FavoritesFragment
+import com.example.shoplyecommerceapp.fragments.HomeFragment
+import com.example.shoplyecommerceapp.fragments.MyOrderFragment
+import com.example.shoplyecommerceapp.fragments.PrivacyFragment
+import com.example.shoplyecommerceapp.fragments.SavedCardsFragment
+import com.example.shoplyecommerceapp.fragments.ShopByCategoriesFragment
+import com.example.shoplyecommerceapp.fragments.login.LoginFragment
+import com.example.shoplyecommerceapp.fragments.signup.SignupFragment
+import com.example.shoplyecommerceapp.fragments.tandcFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -19,15 +37,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         binding = MainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        binding.btnLoginEmail.setOnClickListeaner {
-//            FragmentTaskSheet().show(supportFragmentManager,"loginEmailTAG")
-//        }
-        var toolbar = findViewById<Toolbar>(R.id.tool_bar)
+
+
+        var toolbar = binding.toolBar
         setSupportActionBar(toolbar)
-        drawerLayout = findViewById(R.id.drawer_layout)
-        var navigationView = findViewById<NavigationView>(R.id.nav_view)
+
+        drawerLayout = binding.drawerLayout
+
+        var navigationView = binding.navView
         navigationView.setNavigationItemSelectedListener(this)
-        var toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+
+        var toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
         toggle.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.black) // Hoặc white, red, tùy bạn
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -35,10 +58,55 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomeFragment()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
+
+        var bottomNavigationView = binding.bottomToolbar
+        bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.bottom_home -> {
+                    replaceFragment(HomeFragment())
+                    true
+                }
+                R.id.bottom_orders -> {
+                    replaceFragment(MyOrderFragment())
+                    true
+                }
+                R.id.bottom_categories -> {
+                    replaceFragment(ShopByCategoriesFragment())
+                    true
+                }
+                R.id.bottom_account -> {
+                    replaceFragment(AccountFragment())
+                    true
+                }
+                 else -> false
+            }
+        }
+
+
+        // xử lí nav header
+        val headerView = binding.navView.getHeaderView(0)
+        val loginButton = headerView.findViewById<Button>(R.id.login_btn)
+        val signupButton = headerView.findViewById<Button>(R.id.signup_btn)
+
+        loginButton.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
+            intent.putExtra("SHOW_SIGNUP", false) //show login
+            startActivity(intent)
+        }
+
+        signupButton.setOnClickListener{
+            val intent = Intent(this, AuthActivity::class.java)
+            intent.putExtra("SHOW_SIGNUP", true) //show login
+            startActivity(intent)
+        }
+//        var bottomNavigationView = findViewById(R.id.bottom_toolbar)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.signup_btn -> {
+                replaceFragment(SignupFragment())
+            }
             R.id.nav_home -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, ShopByCategoriesFragment()).commit()
@@ -91,13 +159,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
 
+
         return true
     }
+
+
     override fun onBackPressed() {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
+    }
+    private fun replaceFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit()
     }
 }

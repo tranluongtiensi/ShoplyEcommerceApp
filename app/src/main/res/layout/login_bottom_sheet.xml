@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.login.LoginBottomSheet"
     android:id="@+id/loginemail_container"
-    android:background="@drawable/bg_bottom_sheet"
     android:paddingVertical="30dp">
     <TextView
         android:layout_width="match_parent"
@@ -50,7 +51,7 @@
         android:drawableStart="@drawable/lock_icon"
         android:drawableTint="@color/gray"
         android:drawablePadding="15dp"
-        android:hint="Email Id"
+        android:hint="Password"
         android:layout_margin="20dp"
         android:padding="20dp"/>
 
@@ -70,7 +71,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_login_email"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_pw"
-        android:text="Loginnn   "
+        android:text="Login"
         android:layout_margin="20dp"
         style="@style/ButtonStyles"/>
 

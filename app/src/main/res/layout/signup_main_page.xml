@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.signup.SignupFragment">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,15 +114,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_signup_email"
-        android:background="@drawable/bg_btn_login"
         app:layout_constraintTop_toBottomOf="@id/or_divider_layout"
-        android:clickable="true"
-        android:text="Signup with facebook"
-        android:textColor="@color/white"
+        android:text="Signup with email"
         android:layout_margin="20dp"
-        android:textAllCaps="false"
-        android:textSize="22dp"
-        android:textAlignment="center"/>
+        style="@style/ButtonStyles"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -141,7 +138,8 @@
             android:text="Login"
             android:textSize="20dp"
             android:textColor="@color/purple_700"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:clickable="true"/>
 
     </LinearLayout>
 

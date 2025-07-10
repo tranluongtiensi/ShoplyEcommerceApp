@@ -23,12 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_login_done"
-        android:background="@drawable/bg_btn_login"
-        android:clickable="true"
         android:text="Done"
-        android:textColor="@color/white"
         android:layout_margin="20dp"
-        android:textAllCaps="false"
-        android:textSize="22dp"
-        android:textAlignment="center"/>
+        style="@style/ButtonStyles"/>
 </LinearLayout>
