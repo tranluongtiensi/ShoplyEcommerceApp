@@ -9,6 +9,7 @@ import com.example.shoplyecommerceapp.R
 
 
 class BannerAdapter(private val images: List<Int>):RecyclerView.Adapter<BannerAdapter.BannerViewHolder>() {
+
     inner class BannerViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         //lấy ra imageview từ itemview
         val bannerImage: ImageView = itemView.findViewById(R.id.banner_imgv)

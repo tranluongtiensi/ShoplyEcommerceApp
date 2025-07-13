@@ -3,9 +3,11 @@ package com.example.shoplyecommerceapp.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shoplyecommerceapp.R
-import com.example.shoplyecommerceapp.fragments.login.LoginFragment
-import com.example.shoplyecommerceapp.fragments.signup.SignupFragment
+import com.example.shoplyecommerceapp.views.auth.login.LoginFragment
+import com.example.shoplyecommerceapp.views.auth.signup.SignupFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

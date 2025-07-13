@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "497147185240",
+    "project_id": "authecommerce-75651",
+    "storage_bucket": "authecommerce-75651.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497147185240:android:7788d044e89971a04da22d",
+        "android_client_info": {
+          "package_name": "com.example.shoplyecommerceapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgAutJal6RXd2MyggjdbHX3cEZ8mu92rw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

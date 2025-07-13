@@ -1,4 +1,4 @@
-package com.example.shoplyecommerceapp.fragments.signup
+package com.example.shoplyecommerceapp.views.auth.signup
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -7,27 +7,23 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.shoplyecommerceapp.R
-import com.example.shoplyecommerceapp.databinding.LoginMainPageBinding
 import com.example.shoplyecommerceapp.databinding.MainPageBinding
-import com.example.shoplyecommerceapp.fragments.AccountFragment
-import com.example.shoplyecommerceapp.fragments.AddressesFragment
-import com.example.shoplyecommerceapp.fragments.FaqsFragment
-import com.example.shoplyecommerceapp.fragments.FavoritesFragment
-import com.example.shoplyecommerceapp.fragments.HomeFragment
-import com.example.shoplyecommerceapp.fragments.MyOrderFragment
-import com.example.shoplyecommerceapp.fragments.PrivacyFragment
-import com.example.shoplyecommerceapp.fragments.SavedCardsFragment
-import com.example.shoplyecommerceapp.fragments.ShopByCategoriesFragment
-import com.example.shoplyecommerceapp.fragments.login.LoginFragment
-import com.example.shoplyecommerceapp.fragments.signup.SignupFragment
-import com.example.shoplyecommerceapp.fragments.tandcFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.shoplyecommerceapp.views.AccountFragment
+import com.example.shoplyecommerceapp.views.AddressesFragment
+import com.example.shoplyecommerceapp.views.FaqsFragment
+import com.example.shoplyecommerceapp.views.FavoritesFragment
+import com.example.shoplyecommerceapp.views.HomeFragment
+import com.example.shoplyecommerceapp.views.MyOrderFragment
+import com.example.shoplyecommerceapp.views.PrivacyFragment
+import com.example.shoplyecommerceapp.views.SavedCardsFragment
+import com.example.shoplyecommerceapp.views.ShopByCategoriesFragment
+import com.example.shoplyecommerceapp.views.auth.signup.SignupFragment
+import com.example.shoplyecommerceapp.views.tandcFragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -37,7 +33,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         binding = MainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         var toolbar = binding.toolBar
         setSupportActionBar(toolbar)
